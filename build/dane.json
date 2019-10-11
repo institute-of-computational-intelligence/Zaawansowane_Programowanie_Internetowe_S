@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "imie": "Jan",
+        "nazwisko": "Kowalski",
+        "email": "email123123"
+    },
+    {
+        "id": 1,
+        "imie": "Adam",
+        "nazwisko": "Nowak",
+        "email": "email@example.cpm"
+    }
+]
