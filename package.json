@@ -1,0 +1,29 @@
+{
+  "name": "zaawansowane_programowanie_internetowe_s",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/institute-of-computational-intelligence/Zaawansowane_Programowanie_Internetowe_S.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/institute-of-computational-intelligence/Zaawansowane_Programowanie_Internetowe_S/issues"
+  },
+  "homepage": "https://github.com/institute-of-computational-intelligence/Zaawansowane_Programowanie_Internetowe_S#readme",
+  "devDependencies": {
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "json-loader": "^0.5.7",
+    "ts-loader": "^6.2.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
