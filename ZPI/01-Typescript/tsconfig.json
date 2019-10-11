@@ -1,0 +1,8 @@
+{
+    "com[ilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "target": "es6",
+        "moduleResolutions": "node"
+    }
+}
