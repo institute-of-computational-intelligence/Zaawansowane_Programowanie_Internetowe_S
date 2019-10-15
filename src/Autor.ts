@@ -4,10 +4,10 @@ export default class Autor {
   private _nazwisko: string;
   private _email: string;
 
-  get imie_1(): string {
+  get imie(): string {
     return this._imie;
   }
-  set imie_1(value: string) {
+  set imie(value: string) {
     this._imie = value;
   }
   get nazwisko(): string {

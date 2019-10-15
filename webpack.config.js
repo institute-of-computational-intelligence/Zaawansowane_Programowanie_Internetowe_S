@@ -1,6 +1,6 @@
 var htmlWebpackPlugin = require ('html-webpack-plugin');
 var path = require ('path');
-var json = require ('file-loader?name=./dane.json');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -31,5 +31,6 @@ module.exports = {
       path: path.join (__dirname, './build/'),
       filename: 'index.html',
     }),
+    new CopyWebpackPlugin([ { from: 'src/static', to: 'static' } ])
   ],
 };
