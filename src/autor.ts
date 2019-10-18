@@ -17,7 +17,7 @@ class Autor {
             this._nazwisko = nazwisko;
             this._email = email;
         } else {
-            console.log("Wpisz poprawne dane autora")
+            console.log("Wpisz wymagane dane autora")
         }
     }
 }

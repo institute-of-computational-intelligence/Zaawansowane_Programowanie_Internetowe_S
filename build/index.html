@@ -1,22 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lab01</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+  </style>
+  <title>Lab01</title>
 </head>
 <body onload="pobierzAutorow()">
-    <h1>HELLO WORLD</h1>
-    <button onclick="descreaseNumber()">-</button>
-    <input type="number" [value]="value">
-    <button onclick="increaseNumber()">+</button>
-    <script>
-        
+<h1>HELLO WORLD</h1>
+<button id="decrease-button" onclick="decreaseNumber()">-</button>
+<input id="number" type="number" value="0">
+<button id="increase-button" onclick="increaseNumber()">+</button>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a onclick="showAuthors('table')">Tabela</a>
+    <a onclick="showAuthors('ul')">Lista</a>
+    <a onclick="showAuthors('ol')">Lista numerowana</a>
+  </div>
+</div>
+<script>
+
+    /* Zadanie 4 */
+    function decreaseNumber() {
+        let value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value < 1 ? value = 1 : '';
+        value--;
+        document.getElementById('number').value = value;
+    }
+
+    function increaseNumber() {
+        let value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+    }
+
+    /* Zadanie 5 */
+
+    let autorzy;
     async function pobierzAutorow() {
-    return fetch('dane.json')
-    .then(x => x.json())
-    .then(dane => console.log(dane));
-}</script>
+        return fetch('dane.json')
+            .then(x => x.json())
+            .then(dane => {
+                console.log(dane);
+                autorzy = dane;
+                makeAuthorsTable(autorzy);
+                makeAuthorsList(autorzy);
+                makeAuthorsNumerableList(autorzy);
+            });
+    }
+
+    /* Zadanie 6 i 7 */
+
+    let table = document.createElement('table');
+    let ul = document.createElement('ul');
+    let ol = document.createElement('ol');
+
+    function makeAuthorsTable(autorzy) {
+
+        autorzy.forEach(autor => {
+            let tr = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            td1.appendChild(document.createTextNode(autor.imie));
+            td2.appendChild(document.createTextNode(autor.nazwisko));
+            td2.appendChild(document.createTextNode(autor.email));
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+
+            table.appendChild(tr);
+        });
+        document.body.appendChild(table);
+        table.hidden = true;
+    }
+
+    function makeAuthorsList(autorzy) {
+        autorzy.forEach(autor => {
+            let li = document.createElement('li');
+
+            let imie = document.createTextNode(autor.imie);
+            let nazwisko = document.createTextNode(autor.nazwisko);
+            let email = document.createTextNode(autor.email);
+
+            li.appendChild(imie);
+            li.appendChild(nazwisko);
+            li.appendChild(email);
+
+            ul.appendChild(li);
+        });
+        document.body.appendChild(ul);
+        ul.hidden = true;
+    }
+
+    function makeAuthorsNumerableList(autorzy) {
+
+        autorzy.forEach(autor => {
+            let li = document.createElement('li');
+
+            let imie = document.createTextNode(autor.imie);
+            let nazwisko = document.createTextNode(autor.nazwisko);
+            let email = document.createTextNode(autor.email);
+
+            li.appendChild(imie);
+            li.appendChild(nazwisko);
+            li.appendChild(email);
+
+            ol.appendChild(li);
+        });
+        document.body.appendChild(ol);
+        ol.hidden = true;
+    }
+
+    function showAuthors(type) {
+        console.log('show/hide authors ', type);
+        switch (type) {
+            case 'table':
+                table.hidden = !table.hidden;
+                ul.hidden = true;
+                ol.hidden = true;
+                break;
+            case 'ul':
+                ul.hidden = !ul.hidden;
+                table.hidden = true;
+                ol.hidden = true;
+                break;
+            case 'ol':
+                ol.hidden = !ol.hidden;
+                table.hidden = true;
+                ul.hidden = true;
+                break;
+            default:
+                console.log('zly typ');
+        }
+    }
+
+    /* Zadanie 8 */
+    //Composite design pattern
+    
+
+</script>
 </body>
 </html>
