@@ -1,0 +1,27 @@
+[
+    {
+      "imie": "Tester",
+      "nazwisko": "wwz",
+      "email": "maciej@wp.pl"
+    },
+    {
+      "imie": "nieTester",
+      "nazwisko": "xd",
+      "email": "andrzej@wp.pl"
+    },
+    {
+      "imie": "Aha",
+      "nazwisko": "lol",
+      "email": "mariusz@wp.pl"
+    },
+    {
+      "imie": "Okej",
+      "nazwisko": "paweł",
+      "email": "janusz@o2.pl"
+    },
+    {
+      "imie": "Super",
+      "nazwisko": "hehe",
+      "email": "waclaw@o2.pl"
+    }
+  ]
