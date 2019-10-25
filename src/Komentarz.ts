@@ -13,10 +13,10 @@ class Komentarz{
         this._nick = nick;
     }
 
-    dodajOdpowiedz(odpowiedz:Komentarz): void {
+  /*  dodajOdpowiedz(odpowiedz:Komentarz): void {
         let odp = 
     }
-
+*/
     pobierzOdpowiedz(): Komentarz[] {
         this._odpowiedzi.map(x=> x._odpowiedzi);
         return this._odpowiedzi;
