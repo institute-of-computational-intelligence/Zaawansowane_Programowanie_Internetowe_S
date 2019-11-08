@@ -1,0 +1,7 @@
+<app-wyszukaj [liczbaWynikow]="liczbaAutorow"></app-wyszukaj>
+<ul *ngIf="pokazListe">
+    <li *ngFor="let autor of autorzy; let idx = index">
+        {{idx+1}}. {{autor.imie}} {{autor.nazwisko}} {{autor.email}}
+    </li>
+</ul>
+<button (click)="kliknieto()">{{tytul}}</button>
