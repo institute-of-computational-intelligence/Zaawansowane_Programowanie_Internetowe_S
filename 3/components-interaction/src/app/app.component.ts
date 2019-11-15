@@ -9,8 +9,8 @@ export class AppComponent implements OnInit{
   title = 'components-interaction';
 
   btnClicked = false;
-
   continueLearning: boolean;
+  isDecisionMade = false;
 
   ngOnInit() { }
 
@@ -24,6 +24,10 @@ export class AppComponent implements OnInit{
 
   onContinueLearningListened(event) {
     this.continueLearning = event;
+  }
+
+  onDecision(e) {
+    this.isDecisionMade = e;
   }
 
 }

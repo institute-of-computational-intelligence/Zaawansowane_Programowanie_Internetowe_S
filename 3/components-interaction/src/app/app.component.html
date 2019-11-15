@@ -14,9 +14,9 @@
   [visible]="btnClicked"
   (disableVisibility)="onVisibilitDisabled()"
   (continueLearning)="onContinueLearningListened($event)"
+  (decided)="onDecision($event)"
 ></app-new-cmp>
-
-<div *ngIf="btnClicked">
+<div *ngIf="isDecisionMade">
   <p *ngIf="continueLearning">Cieszę się idziemy dalej !</p>
   <p *ngIf="!continueLearning">Przykro mi, ze się męczysz!</p>
 </div>
