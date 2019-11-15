@@ -1,0 +1,28 @@
+<div style="background-color: silver;">
+  <span> Zadania 1 - 4</span>
+  <p
+  *ngIf="displaySwitch"
+  [ngClass]="[color ? 'color' : '' , fontSize ? 'fontSize' : '']"
+  >
+  {{myFirstName}} {{myLastName}} </p>
+
+  <button (click)="showMyName()"> Show my name! </button>
+  <button (click)="colorParagraph()"> Color paragraph! </button>
+  <button (click)="changeFontSize()"> Change Font Size! </button>
+</div>
+<div style="background-color: yellowgreen;">
+  <span>Zadania 5 - 6</span>
+  <ul>
+    <li *ngFor="let link of links">
+       <a (click)="oneElementClicked($event)" [ngClass]="link.selected ? 'bgColor' : '' " >{{link.name}}</a>
+    </li>
+  </ul>
+</div>
+<div style="background-color: yellow;">
+  <span> Zadania 7 - 8</span>
+  <p> {{number}} </p>
+  <button (click)="onAddOneClicked()"> Add One </button>
+  <button (click)="onSubOneClicked()"> Sub One </button>
+  <button (click)="onAddTwoClicked()"> Add Two </button>
+  <button (click)="onSubTwoClicked()"> Sub Two </button>
+</div>
