@@ -1,0 +1,10 @@
+<p>lista-autorow works!</p>
+<app-wyszukaj [liczbaWynikow]="liczbaAutorow"(wyszukaj)="zmien($event)">
+</app-wyszukaj>
+<ul *ngIf="pokazListe">
+    <li *ngFor="let autor of autorzy; let idx = index">
+        {{idx+1}}. {{autor.imie}} {{autor.nazwisko}} ({{autor.email}})
+    </li>
+</ul>
+<button (click)="kliknieto()">{{tytul}}</button>
+
