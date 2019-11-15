@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Zadanie 1,2,3,4</h1>
+  <p [class.bigger-font]="isFontButtonClicked"
+     [class.change-color]="isColorButtonClicked">{{imie}} {{nazwisko}}</p>
+  <button (click)="showName()">Pokaz</button>
+  <div class="buttons-container">
+    <button (click)="isFontButtonClicked = !isFontButtonClicked">Zmien czcionke</button>
+    <button (click)="isColorButtonClicked = !isColorButtonClicked">Zmien kolor</button>
+  </div>
+
+  <h1>Zadanie 5, 6, 16, 22, 23, 24</h1>
+  <div class="link-container">
+    <div *ngFor="let link of links; let i = index">
+      <span [class.link-color]="link.clicked" (click)="changeColor(i)" >Nazwa: {{link.name}} Link: {{link.path}}</span>
+      <button (click)="showPopup(i)">Usun</button>
+      <button (click)="editLink(i)">Edytuj</button>
+    </div>
+  </div>
+  <div>
+    <span>Zadanie 21</span>
+    <input type="text" placeholder="Nazwa strony..." [(ngModel)]="siteName">
+    <input type="text" placeholder="Adres..." [(ngModel)]="siteAddress">
+    <button (click)="siteName = ''; siteAddress = ''">Wyczysc</button>
+    <button (click)="addSite()">Dodaj</button>
+  </div>
+
+  <h1>Zadanie 7, 8</h1>
+  <div>
+    <button (click)="changeCount(-2)">-2</button>
+    <button (click)="changeCount(-1)">-</button>
+    <input type="number" [value]="inputValue">
+    <button (click)="changeCount(1)">+</button>
+    <button (click)="changeCount(2)">+2</button>
+  </div>
+
+  <h1>Zadanie 9, 10, 11</h1>
+  <div class="image-container">
+    <button (click)="changeImage(-1)" [class.hide-previous]="isFirstImage">Poprzednie</button>
+    <button (click)="changeImage(1)" [class.hide-next]="isLastImage">Nastepne</button>
+    <img [src]="images[imageIndex].path" [alt]="images[imageIndex].path">
+  </div>
+
+  <h1>Zadanie 12, 13, 14</h1>
+  <button [routerLink]="'/zad12'">Komponent nr 2</button>
+  <p>{{infoFromSecondComponent}}</p>
+
+</div>
+

@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>Edytuj link</h3>
+  <div>
+    <span>Nazwa strony: </span>
+    <input type="text" [(ngModel)]="siteName">
+  </div>
+  <div>
+    <span>Adres strony: </span>
+    <input type="text" [(ngModel)]="siteAddress">
+  </div>
+  <div>
+    <button (click)="onNoClick()">Anuluj</button>
+    <button (click)="editRecord()" [disabled]="!this.siteName || !this.siteAddress">Edytuj</button>
+  </div>
+  <div class="error-container" [class.show-error]="showError">
+    <span>Podaj wszystkie dane</span>
+  </div>
+</div>

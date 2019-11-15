@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .error-container {
+    display: none;
+    &.show-error {
+      display: inline;
+    }
+  }
+}
