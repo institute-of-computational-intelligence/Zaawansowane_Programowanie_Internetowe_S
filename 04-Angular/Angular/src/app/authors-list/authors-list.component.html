@@ -1,0 +1,10 @@
+<app-search>[numberOfResults]=</app-search>
+<ul *ngIf="bull">
+    <li *ngFor="let author of authors">
+        {{author.name}} - {{author.surname}} - {{author.age}}
+    </li>
+</ul>
+
+<div>
+    <button (click)="changeState()">Change state</button>
+</div>
