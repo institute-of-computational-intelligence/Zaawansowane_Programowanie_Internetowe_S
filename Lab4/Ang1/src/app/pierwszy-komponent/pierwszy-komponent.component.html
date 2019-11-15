@@ -31,3 +31,26 @@
   <button (click)="onAddTwoClicked()">Add Two</button>
   <button (click)="onSubTwoClicked()">Sub Two</button>
 </div>
+
+<div>
+  <span>Zadanie 9-11</span>
+  <div class="row">
+    <img
+      src="{{ pictures[picindex] }}"
+      alt=""
+      style="width:400px;height:400px;"
+    />
+  </div>
+
+  <div class="row">
+    <button [hidden]="picindex == pictures?.length - 1" (click)="nextpic()">
+      Next
+    </button>
+    <button [hidden]="picindex == pictures?.length - 1" (click)="backpic()">
+      Go Back
+    </button>
+    <div *ngIf="picindex == pictures?.length - 1; else elseBlock">
+      Łostotni łobrozek
+    </div>
+  </div>
+</div>

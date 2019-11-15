@@ -12,6 +12,8 @@ export class PierwszyKomponentComponent implements OnInit {
   color = false;
   fontSize = false;
   number = 0;
+  picurl: String;
+  picindex = 0;
   links = [
     { name: "das.pl", selected: false },
     { name: "asdasd.pl", selected: false },
@@ -20,9 +22,36 @@ export class PierwszyKomponentComponent implements OnInit {
     { name: "mmmma.pl", selected: false }
   ];
 
+  pictures = [
+    // {
+    //   picurl:
+    //     "https://images.unsplash.com/photo-1573750329232-7d8ffea02dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+    //   id: 0
+    // },
+    (this.picurl =
+      "https://images.unsplash.com/photo-1573750329232-7d8ffea02dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"),
+    (this.picurl =
+      "https://images.unsplash.com/photo-1573747502252-7daf35dc2e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=629&q=80"),
+    (this.picurl =
+      "https://images.unsplash.com/photo-1573750329232-7d8ffea02dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"),
+    (this.picurl =
+      "https://images.unsplash.com/photo-1573759251026-3ac162e6ebcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
+  ];
+
   constructor() {}
 
   ngOnInit() {}
+
+  nextpic() {
+    this.picindex++;
+    // if(this.picindex === this.pictures.length){
+
+    // }
+  }
+
+  backpic() {
+    this.picindex--;
+  }
 
   showMyName() {
     this.displaySwitch = !this.displaySwitch;
