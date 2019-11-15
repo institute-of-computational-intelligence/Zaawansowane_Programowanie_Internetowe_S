@@ -12,12 +12,13 @@ export class ExercisesComponent implements OnInit {
   color = false;
   fontSize = false;
   number = 0;
+  choosenElement;
   links = [
-    { name: 'onet.pl', selected: false },
-    { name: 'wp.pl', selected: false },
-    { name: 'filmweb.pl', selected: false },
-    { name: 'interia.pl', selected: false },
-    { name: 'kwejk.pl', selected: false }
+    { name: 'onet.pl', details: 'Szczegółowe informacje ONET', selected: false },
+    { name: 'wp.pl', details: 'Szczegółowe informacje WP', selected: false },
+    { name: 'filmweb.pl', details: 'Szczegółowe informacje FILMWEB', selected: false },
+    { name: 'interia.pl', details: 'Szczegółowe informacje INTERIA', selected: false },
+    { name: 'kwejk.pl', details: 'Szczegółowe informacje KWEJK', selected: false }
   ];
 
   constructor() {}
@@ -61,12 +62,14 @@ export class ExercisesComponent implements OnInit {
         (value) => {
           const obj = {
             name: value.name,
+            details: value.details,
             selected: false
           };
           return obj;
         });
     const selectedLink = event.target.innerHTML;
     const selectedItemId = this.links.findIndex(value => value.name === selectedLink);
+    this.choosenElement = this.links[selectedItemId];
     this.links[selectedItemId].selected = true;
   }
 }

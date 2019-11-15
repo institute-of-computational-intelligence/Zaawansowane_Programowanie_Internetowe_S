@@ -17,6 +17,9 @@
        <a (click)="oneElementClicked($event)" [ngClass]="link.selected ? 'bgColor' : '' " >{{link.name}}</a>
     </li>
   </ul>
+  <div *ngIf="choosenElement">
+    <app-link-details [link]="choosenElement"></app-link-details>
+  </div>
 </div>
 <div style="background-color: yellow;">
   <span> Zadania 7 - 8</span>
