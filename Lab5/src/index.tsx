@@ -1,24 +1,12 @@
-import React from "react"
 import ReactDOM from "react-dom";
+import React from "react";
+import Zad1 from './Zad1';
+import Zad4 from './Zad4-5/Zad4-5';
 
-class Pierwszy extends React.Component {
+/*ReactDOM.render(<Zad1></Zad1>,
+    document.querySelector("div")
+    );*/
 
-    imie : string =  "Ala"
-    metoda = () => {
-        this.imie = "Ela";
-        console.log(this.imie);
-    }
-    
-    render() {
-        return (
-            <div>
-            <div>Hello world {this.imie}!</div>
-            <button onClick={this.metoda}>Kliknij mnie!</button>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(<Pierwszy></Pierwszy>,
+ReactDOM.render(<Zad4></Zad4>,
     document.querySelector("div")
     );
