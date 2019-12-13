@@ -1,0 +1,25 @@
+<h2>Dodaj nowego autora</h2>
+<form (ngSubmit)="zatwierdz()" #form="ngForm">
+    <div class="form-group">
+        <label class="control-label">Imie: </label>
+        <input [(ngModel)]="autor.imie" name="imie" required maxlength="10" #imie="ngModel" class="form-control">
+        <div *ngIf="imie.control.hasError('required') && imie.control.dirty" class="text-danger">
+            Imię jest wymagane
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Nazwisko: </label>
+        <input [(ngModel)]="autor.nazwisko" name="nazwisko" required maxlength="10" #nazwisko="ngModel" class="form-control">
+        <div *ngIf="!nazwisko.control.valid && nazwisko.control.dirty" class="text-danger">
+            Błędnie wprowadzone nazwisko
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Email: </label>
+        <input [(ngModel)]="autor.email" name="email" class="form-control">
+    </div>
+    <div>
+    <button type="submit" [disabled]="!form.valid" class="btn btn-success">Zatwierdz</button>
+    <button type="button" (click)="zamknij()" class="btn btn-default">Zamknij</button>
+    </div>
+</form>

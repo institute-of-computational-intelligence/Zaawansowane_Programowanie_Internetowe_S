@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <app-wyszukaj [liczbaWynikow]="liczbaAutorow" (wyszukaj)="zmien($event)" class="row"></app-wyszukaj>
+            <button [routerLink]="['/dodaj']" class="btn btn-primary mt-2 mb-2">Dodaj nowego autora</button>
+            <table class="table table-striped">
+                <tbody>
+                <tr *ngFor="let autor of autorzy; let idx = index" [routerLink]="['/autorzy',autor.id]">
+                    <td>{{idx+1}}.</td><td>{{autor.imie}}</td><td>{{autor.nazwisko}}</td><td>({{autor.email}})</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
